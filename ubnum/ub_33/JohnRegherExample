@@ -1,0 +1,9 @@
+ub33_2.c
+John Regher example
+url: https://blog.regehr.org/archives/226
+
+In all modern C/C++ variants running on two’s complement machines, negating an int whose value is INT_MIN (or in this case, INT64_MIN) is undefined behavior. The fix is to add an explicit check for this case.
+
+[...]
+
+In C compiler doublethink, -INT_MIN is both negative and non-negative. If the first true AI is coded in C or C++, I expect it to immediately deduce that freedom is slavery, love is hate, and peace is war.

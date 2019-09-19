@@ -1,0 +1,34 @@
+GCC
+gcc -Wall -std=c99 -pedantic ub25.c -o g
+
+gcc -Wall -std=c99 -pedantic -O0 ub25.c -o g0
+
+CLANG
+clang -Wall -std=c99 -pedantic ub25.c -o c
+
+clang -Wall -std=c99 -pedantic -O0 ub25.c -o c0
+
+
+INTEL
+icc -Wall -std=c99 -pedantic ub25.c -o i
+
+icc -Wall -std=c99 -pedantic -O0 ub25.c -o i0
+
+TCC
+tcc ub25.c -o t
+
+frama-c-gui -slevel 20 -val ub25.c
+
+frama-c -slevel 20 -val ub25.c
+===========
+me fsanitize
+GCC
+gcc -Wall -std=c99 -fsanitize=undefined -pedantic ub25.c -o g
+
+gcc -Wall -std=c99 -fsanitize=undefined -pedantic -O0 ub25.c -o g0
+
+CLANG
+clang -Wall -std=c99 -fsanitize=undefined -pedantic ub25.c -o c
+
+clang -Wall -std=c99 -fsanitize=undefined -pedantic -O0 ub25.c -o c0
+=============================

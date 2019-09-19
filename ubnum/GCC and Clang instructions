@@ -1,0 +1,54 @@
+#### GCC #####
+$ gcc ub42.c 
+$ ./a.out
+or
+$ gcc ub42.c -o gc
+$ ./ub
+$ gcc -fsanitize=undefined ub_.c -o gc
+
+Syntax
+$ gcc -Olevel [options] [source files] [object files] [-o output file]
+
+#### Clang #####
+$ clang ub42.c 
+$ ./a.out
+or
+$ clang ub42.c -o cl
+$ ./ub
+$ clang -fsanitize=undefined ub42.c -o clcpm 
+
+
+#### Flags ####
+-Wall
+-std=c11 or c99
+-fsanitize=undefined (or something else)
+-Werror
+-pedantic
+
+Each compiler will test it with all opt levels and see if -O0 is like no opt flag:
+
+***GCC***
+1) gcc -Wall -Werror -std=c99 -fsanitize=undefined -pedantic FILE.C -o OUTPUT_NAME
+2) gcc -O0/O1/O2/O3 -Wall -Werror -std=c99 -fsanitize=undefined -pedantic FILE.C -o OUTPUT_NAME
+
+***CLANG***
+1) clang -Wall -Werror -std=c99 -fsanitize=undefined -pedantic FILE.C -o OUTPUT_NAME
+2) clang -O0/O1/O2/O3 -Wall -Werror -std=c99 -fsanitize=undefined -pedantic FILE.C -o OUTPUT_NAME
+
+***INTEL***
+1)icc -Wall -Werror -std=c99 -pedantic FILE.C -o OUTPUT_NAME
+on icc the -fsanitize doesn't work!
+2) icc -O0/O1/O2/O3 -Wall -Werror -std=c99 -pedantic FILE.C -o OUTPUT_NAME
+
+
+#### FRAMA - C ####
+frama-c-gui -slevel 10 -val ub42.c
+
+
+#### Process ####
+1) GCC without flags - report results
+2) GCC with selected flags - report results
+3) Clang without flags - report results
+4) Clang with selected flags - report results
+5) Frama-C - report results
+6) final verdict for every UB

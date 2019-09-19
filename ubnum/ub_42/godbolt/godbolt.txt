@@ -1,0 +1,13 @@
+Godbolt
+
+Clang
+https://godbolt.org/z/JaEsRF
+
+https://godbolt.org/z/uoQaTr
+
+https://godbolt.org/z/CHzOc3
+
+https://godbolt.org/z/i2es8y
+
+https://godbolt.org/z/rt_2Px
+

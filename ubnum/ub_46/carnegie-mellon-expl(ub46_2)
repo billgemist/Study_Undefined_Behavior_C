@@ -1,0 +1,8 @@
+Explanation about ub46_2 from Carnegie Mellon
+
+Example: Noncompliant Code Example (Apparently Accessible Out-of-Range Index)
+
+url: https://wiki.sei.cmu.edu/confluence/display/c/ARR30-C.+Do+not+form+or+use+out-of-bounds+pointers+or+array+subscripts#ARR30-C.Donotformoruseout-of-boundspointersorarraysubscripts-ApparentlyAccessibleOut-of-RangeIndex
+
+
+/*This noncompliant code example declares matrix to consist of 7 rows and 5 columns in row-major order. The function init_matrix iterates over all 35 elements in an attempt to initialize each to the value given by the function argument x. However, because multidimensional arrays are declared in C in row-major order, the function iterates over the elements in column-major order, and when the value of j reaches the value COLS during the first iteration of the outer loop, the function attempts to access element matrix[0][5]. Because the type of matrix is int[7][5], the j subscript is out of range, and the access has undefined behavior 46.*/
